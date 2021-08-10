@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
-<body style = "font-family: Symbol">
-    
-    <h1 style = "text-align:center" >Wesley Wu</h1>
+<head>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+<style>
+    .dropbtn {
+        background-color: #14dd93;
+        color: white;
+        padding: 10px;
+        font-size: 13px;
+        border: none;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: whitesmoke;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: #ddd;}
+      
+      .dropdown:hover .dropdown-content {display: block;}
+      
+      .dropdown:hover .dropbtn {background-color: #433e8e;}
+</style>
+</head>
+<body style = "font-family: Lucida Sans Unicode; background-color:rgb(2, 132, 165)">
+
+    <h1 style = "text-align:center" >Wesley Wu</title>
     <h2 style = "text-align:center">EE @ UIUC</h2>
     <p style = "text-align:center">I am an EE major minoring in CS, and I like to play (and watch) table tennis, run, and dance for fun. I also enjoy listening to music, watching YouTube, and playing video games</p>
+    <div class = "dropdown">
+        <button class = "dropbtn">Social Media Links</button>
+        <div class = "dropdown-content">
+            <a href = "https://www.linkedin.com/in/wesleywu-uiuc/">LinkedIn</a>
+            <a href = "https://github.com/wesleywu20">Personal GitHub</a>
+            <a href = "https://github-dev.cs.illinois.edu/wwu70">University GitHub</a>
+        </div>
+    </div>
 
 </body>
 </html>
