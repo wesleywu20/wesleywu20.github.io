@@ -54,12 +54,39 @@
         
         .center-image {
             margin: 0;
-            position: relative;
-            top: 2500px;
-            top: 45%;
-            left: 50%;
+            position: absolute;
+            top: 60%;
+            left: 33%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+        }
+
+        .center-image-2 {
+            margin: 0;
+            position: absolute;
+            top: 85%;
+            left: 68%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .center-image-3 {
+            margin: 0;
+            position: absolute;
+            top: 112%;
+            left: 33%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .img-with-text {
+            text-align: justify;
+            width: 500;
+        }
+
+        .img-with-text img {
+            display: block;
+            margin: 0 auto;
         }
 
         .left2 {
@@ -84,7 +111,7 @@
             margin: 0;
             position: absolute;
             top: 50%;
-            left: 30%;
+            left: 39%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
@@ -93,22 +120,32 @@
             margin: 0;
             position: absolute;
             top: 50%;
-            left: 64%;
+            left: 47%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
+
+        .right2 {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 58%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
         .right3 {
             margin: 0;
             position: absolute;
             top: 50%;
-            left: 80%;
+            left: 78%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
 
 </style>
 </head>
-<body style = "font-family: Georgia; background-color:rgb(2, 132, 165)">
+<body style = "font-family: monospace; background-color:rgb(2, 132, 165)">
 
     <title>Wesley Wu</title>
     <h1 style = "text-align:center">Wesley Wu</title>
@@ -119,13 +156,13 @@
                 <button class = "dropbtn">About Me</button>
             </div>
         </div>
-        <div class = "center">
+        <div class = "right2">
             <div class = "dropdown">
                 <button class = "dropbtn">Business Links</button>
                 <div class = "dropdown-content">
                     <a href = "https://www.linkedin.com/in/wesleywu-uiuc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <a href = "https://github.com/wesleywu20" target="_blank" rel="noopener noreferrer">Personal GitHub</a>
-                    <a href = "https://github-dev.cs.illinois.edu/wwu70" target="_blank" rel="noopener noreferrer">University GitHub</a>
+                    <!-- <a href = "https://github-dev.cs.illinois.edu/wwu70" target="_blank" rel="noopener noreferrer">University GitHub</a> -->
                 </div>
             </div>
         </div>
@@ -139,11 +176,20 @@
                 </div>
             </div>
         </div>
+        <div class = "left3">
+            <div class = "dropdown">
+                <button class = "dropbtn">Projects</button>
+                    <div class = "dropdown-content">
+                        <a href = "https://wiki.illinois.edu/wiki/display/ECE110HLSF15/IoT+Water+System" target="_blank" rel="noopener noreferrer">IoT Water System</a>
+                        <a href = "https://drive.google.com/file/d/1rMYeaB5zKG3JOJHqtnBVKIQ8XVk7EzyB/view?usp=sharing" target="_blank" rel="noopener noreferrer">Board Game Recommendation System</a>
+                    </div>
+            </div>
+        </div>
     </div>
-    <p style = "text-align:center">I am an EE major minoring in CS preparing to transfer into CE, and I like to play (and watch) table tennis, run, and dance for fun. </p>
-    <p style = "text-align: center">I also enjoy listening to music, watching YouTube, and playing video games.</p>
-    
-<img src = coolerttserve.jpg width = "500" height = "333" class = "center-image">
-
+    <p style = "text-align:center;font-size:18px">I am a second-year EE major minoring in CS preparing to transfer into CE, and I like to play (and watch) table tennis, run, dance, and ice skate for fun. At UIUC, I am a recently initiated member of HKN Alpha Chapter, an active player on Illini Table Tennis, and formerly wrote firmware for the telemetry subteam on Illini Solar Car</p>
+    <p style = "text-align:center;font-size:18px">I also enjoy listening to music, watching YouTube, and playing video games.</p>
+    <img src = coolerttserve.jpg width = "500" height = "333" class = "center-image">
+    <img src = cooliceskating.jpg width = "375" height = "500" class = "center-image-2">
+    <img src = tempocapture.jpg width = "500" height = "350" class = "center-image-3">
 </body>
 </html>
