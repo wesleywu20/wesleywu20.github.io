@@ -9,6 +9,30 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/slick.css" type="text/css" /> 
     <link rel="stylesheet" href="css/templatemo-style.css">
+    <script>
+      function savePageState(pageId) {
+        localStorage.setItem("lastPage", pageId);
+      }
+
+      function restorePageState() {
+        const lastPage = localStorage.getItem("lastPage");
+        if (lastPage) {
+          showPage(lastPage);
+        } else {
+          showPage("home"); // default page
+        }
+      }
+
+      function showPage(pageId) {
+        // hide all pages
+        document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+        // show selected page
+        document.getElementById(pageId).style.display = "block";
+        savePageState(pageId);
+      }
+
+      window.onload = restorePageState;
+    </script>
 <!--
     
 TemplateMo 560 Astro Motion
@@ -66,10 +90,16 @@ https://templatemo.com/tm-560-astro-motion
                   <p class="mb-4">
                     Welcome to my digital domain!
                     <p>
-                    I'm a senior studying computer engineering at the University of Illinois Urbana-Champaign, driven by an unwavering passion for computer architecture. When not immersed in the world of technology, you'll find me honing my skills in table tennis and expressing myself through the art of dance. <br>
+                    I'm a second-year MS ECE student at the University of Illinois Urbana-Champaign, with a specialization in computer architecture targeting networking systems. I'm currently a researcher in the <a href="https://fast.ece.illinois.edu/" target="_blank" rel="noopener noreferrer">FAST Lab</a>, working on enabling <a href="https://p4.org/" target="_blank" rel="noopener noreferrer">P4</a> programmability on an <a href="https://fast.ece.illinois.edu/projects/2_project/" target="_blank" rel="noopener noreferrer">FPGA-based PCIe Switch</a> under the guidance of Professor <a href="https://ece.illinois.edu/about/directory/faculty/nskim" target="_blank" rel="noopener noreferrer">Nam Sung Kim</a>. <br>
                     </p>
                     <p>
-                    Having embarked on internships at Motorols Solutions and Qualcomm, I've delved into embedded software and SoC Design Verification, respectively, actively contributing to real-world projects that blend theory with practice. These experiences have only fueled my fascination with the intricate world of computer architecture and digital hardware. <br>
+                      Throughout my time as a masters student, I've had the honor of completing two internships at Arm, where I contributed to SoC post-silicon validation tooling infrastructure and design verification efforts on Arm's <a href="https://www.arm.com/products/silicon-ip-system/corelink-interconnect/nic" target="_blank" rel="noopener noreferrer">CoreLink Interconnect</a>. Both experiences were invaluable in solidifying my understanding of industry-level computer architecture and further fueling my passion for the field.
+                    </p>
+                    <p>
+                      For my first three semesters, I was a TA for <a href="https://ece.illinois.edu/academics/courses/ece120" target="_blank" rel="noopener noreferrer">ECE 120: Introduction to Computing</a>, where I helped teach first-year undergraduates learn how computers are built from bits and bytes all the way to assembly programming. The course was one of my favorites as an undergrad, so I was always happy to help others learn the same material and give them a taste of basic computer architecture principles. This semester, I'm a TA for <a href="https://ece.illinois.edu/academics/courses/ece462" target="_blank" rel="noopener noreferrer">ECE 462: Logic Synthesis</a>, where I help students learn algorithms and tools used in the synthesis of digital hardware from high-level descriptions, with a focus on minimal power, area, and delay.
+                    </p>
+                    <p>
+                      While I was an undergrad, I also completed two successful internships at Motorola Solutions and Qualcomm, in which I gained valuable experience in embedded software and SoC Design Verification, respectively, actively contributing to real-world projects that blend theory learned from coursework with real-world implementation. These experiences have only fueled my fascination with the intricate world of computer architecture and digital hardware. <br>
                     </p>
                     <p>
                       Beyond my academic pursuits, I find immense joy in exploring the captivating realm where creativity and technology converge. This website is a canvas where my academic prowess, hands-on projects, and dedication to computer architecture come together. Join me on this journey as we delve into the fascinating world of computer engineering, pushing the boundaries of innovation together.
@@ -98,40 +128,40 @@ https://templatemo.com/tm-560-astro-motion
               <div class="circle intro-circle-2"></div>
               <div class="mx-auto tm-border-top gallery-slider">
                 <figure class="effect-julia item">
+                    <img src="img/sat.png" alt="Image">
+                    <figcaption>
+                        <div>
+                            <p>Click here to learn more about my team's SAT solving accelerator tapeout project!</p>
+                        </div>
+                        <a href = "./docs/ECE_427_Project_Proposal.pdf" target="_blank" rel="noopener noreferrer"></a>
+                    </figcaption>
+                </figure>
+                <figure class="effect-julia item">
+                  <img src="img/encryption.jpg" alt="Image">
+                  <figcaption>
+                      <div>
+                          <p>Click here to learn more about my team's homomorphic encryption hardware accelerator!</p>
+                      </div>
+                      <a href = "docs/BasedAcc.pdf" target="_blank" rel="noopener noreferrer"></a>
+                  </figcaption>
+                </figure>
+                <figure class="effect-julia item">
                     <img src="img/RISCV.png" alt="Image">
                     <figcaption>
                         <div>
-                            <p>Click here to learn more about my pipelined RISC-V design!</p>
+                            <p>Click here to learn more about my team's pipelined RISC-V design!</p>
                         </div>
-                        <a href = "https://github.com/wesleywu20/RISC-V-Processor" target="_blank" rel="noopener noreferrer"></a>
+                        <a href = "./docs/411willhelp_finalReport.pdf" target="_blank" rel="noopener noreferrer"></a>
                     </figcaption>
                 </figure>
                 <figure class="effect-julia item">
                     <img src="img/fpga.jpg" alt="Image">
                     <figcaption>
                         <div>
-                            <p>Click here to learn about my FPGA crossword implementation!</p>
+                            <p>Click here to learn about my partner's and my FPGA crossword implementation!</p>
                         </div>
                         <a href = "https://github.com/wesleywu20/FPGA_Crossword" target="_blank" rel="noopener noreferrer"></a>
                     </figcaption>
-                </figure>
-                <figure class="effect-julia item">
-                  <img src="img/chip.png" alt="Image">
-                  <figcaption>
-                      <div>
-                          <p>Click here to learn more about my homomorphic encryption hardware accelerator!</p>
-                      </div>
-                      <a href = "https://github.com/wesleywu20/BasedAcc_HE" target="_blank" rel="noopener noreferrer"></a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-julia item">
-                  <img src="img/tux.png" alt="Image">
-                  <figcaption>
-                      <div>
-                          <p>Click here to learn more about my OS kernel!</p>
-                      </div>
-                      <a href = "https://github.com/wesleywu20/Must-C_OS" target="_blank" rel="noopener noreferrer"></a>
-                  </figcaption>
                 </figure>
                 <figure class="effect-julia item">
                   <img src="img/cuda.png" alt="Image">
@@ -146,7 +176,7 @@ https://templatemo.com/tm-560-astro-motion
                 <img src="img/arduino.jpg" alt="Image">
                 <figcaption>
                     <div>
-                        <p>Click here to learn more about my hardware implementation of Wordle!</p>
+                        <p>Click here to learn more about my team's hardware implementation of Wordle!</p>
                     </div>
                     <a href = "https://github.com/wesleywu20/HardwareWordle" target="_blank" rel="noopener noreferrer"></a>
                 </figcaption>
@@ -155,16 +185,16 @@ https://templatemo.com/tm-560-astro-motion
                 <img src="img/iot.jpg" alt="Image">
                 <figcaption>
                     <div>
-                        <p>Click here to learn more about my IoT water system project!</p>
+                        <p>Click here to learn more about my team's IoT water system project!</p>
                     </div>
-                    <a href = "https://wiki.illinois.edu/wiki/display/ECE110HLSF15/IoT+Water+System" target="_blank" rel="noopener noreferrer"></a>
+                    <a href = "https://www.youtube.com/watch?v=Y3D9xJxNU90" target="_blank" rel="noopener noreferrer"></a>
                 </figcaption>
               </figure>
               <figure class="effect-julia item">
                 <img src="img/graph.png" alt="Image">
                 <figcaption>
                     <div>
-                        <p>Click here to learn more about my Board Game Recommendation System project!</p>
+                        <p>Click here to learn more about my team's Board Game Recommendation System project!</p>
                     </div>
                     <a href = "https://github.com/wesleywu20/Board-Game-Recommendation-System" target="_blank" rel="noopener noreferrer"></a>
                 </figcaption>
@@ -178,13 +208,43 @@ https://templatemo.com/tm-560-astro-motion
               <div class="circle intro-circle-2"></div>
               <div class="circle intro-circle-3"></div>
               <div class="circle intro-circle-4"></div>
+              <div class = "tm-bg-dark content-pad">
+                <h2 class="mb-4">Arm</h2>
+                <p class="mb-4">
+                  At Arm, I've had the privilege of completing two internships, one in SoC post-silicon validation tooling infrastructure and another in design verification on the System IP team. In my internship with the SoC Validation Team, I worked under the mentorship of <a href="https://www.linkedin.com/in/prashantmishra10/" target="_blank" rel="noopener noreferrer">Prashant Mishra</a> and management of <a href="https://www.linkedin.com/in/michael-eidson-72757b6/" target="_blank" rel="noopener noreferrer">Michael Eidson</a>. In my internship with the System IP team, I worked under the mentorship of <a href="https://www.linkedin.com/in/rohit-sardesai-47b81b8/" target="_blank" rel="noopener noreferrer">Rohit Sardesai</a> and management of <a href="https://www.linkedin.com/in/kschan/" target="_blank" rel="noopener noreferrer">Kenny Chan</a>.
+                </p>
+                <p>
+                  During my first internship, I worked on developing a Python-based API for remote control of <a href="https://www.chromaus.com/thermal-systems/cobra-thermal-system" target="_blank" rel="noopener noreferrer">Chroma Cobra</a> temperature forcing systems, which are used in many post-silicon validation labs to test SoC performance at various operating temperatures. The main feature of the API was a Python tkinter-based GUI which allowed engineers to easily manage and monitor the thermal systems remotely, improving efficiency and reducing the need for physical presence in the lab. In addition, I created a custom Python library to interface with the Chroma Cobra systems, enabling automated control for batch testing scenarios. As the post-silicon lab was relatively new and still establishing their bases, I also made the API future-proof by providing a framework for adding support for other temperature systems in the future along with detailed documentation to facilitate easy adoption by the team. 
+                </p>
+                <p>
+                  In my second internship, I contributed to the design verification of Arm's <a href="https://www.arm.com/products/silicon-ip-system/corelink-interconnect/nic" target="_blank" rel="noopener noreferrer">CoreLink Interconnect</a> using SystemVerilog and UVM methodologies. I was mainly responsible for tracing and resolving bugs in the RTL design of and testbench used to verify a crucial block in the interconnect. 
+                </p>
+                <p>  
+                  When I wasn't contributing to direct verification of the interconnect itself, I was working towards enabling <a href="https://www.synopsys.com/verification/simulation/vcs.html" target="_blank" rel="noopener noreferrer">Synopsys VCS</a> simulator as a secondary option, as the System IP team primarily uses <a href="https://resources.sw.siemens.com/en-US/fact-sheet-questasim/" target="_blank" rel="noopener noreferrer">Siemens/Mentor QuestaSim</a> for their verification. This involved ensuring that all existing tests in the testbench were compatible with VCS and debugging any issues that arose during compile and simulation. I was even rewarded for my efforts on the simulation tooling infrastructure, as another verification engineer was able to catch a bug using VCS that was previously undetected using QuestaSim.
+                </p>
+                <p>
+                  Both internships at Arm provided me with invaluable hands-on experience in the semiconductor industry, allowing me to apply my academic knowledge to real-world projects. I am grateful for the opportunity to work with talented professionals and contribute to cutting-edge technology development. I'm very excited to return to Arm next winter for a full-time position on the System IP team, where I will work on RTL design for new features on a core component of the CoreLink Interconnect!
+                </p>
+              </div>
+              <div class = "tm-bg-dark content-pad">
+                <h2 class="mb-4">Qualcomm</h2>
+                <p class="mb-4">
+                  At Qualcomm, I've had the privilege of getting my first hands-on experience in pre-silicon chip design and working on a DV project under the mentorship of <a href="https://www.linkedin.com/in/alexvalenciagt/" target="_blank" rel="noopener noreferrer">Alex Valencia</a> and management of <a href="https://www.linkedin.com/in/surendran-subramanian-188a3861/" target="_blank" rel="noopener noreferrer">Suren Surbramanian</a> and <a href="https://www.linkedin.com/in/santoshkumar9891/" target="_blank" rel="noopener noreferrer">Santosh Kumar</a>.
+                </p>
+                <p>
+                  During my time at Qualcomm, I mainly worked on implementing a functional coverage model for the application processor sub-system of a future mobile SoC, allowing for the SoC Integration DV team to ensure high verification quality during integration. I added this model to an already existing special functional coverage framework spearheaded by two of my co-workers which significantly cuts down on coverage collection time across simulation, emulation, and prototyping platforms simultaneously. To complement this functional coverage model, I also wrote a Cadence vPlan to indicate to the DV engineers which bins were of more importance to cover in the verification tests. 
+                </p>
+                <p>
+                  As this was my first exploration into the realm of hardware, I learned a great deal about what industry tools and methodologies are used in the process of design verification, especially UVM. In addition, since I spent the duration of the summer working on the application processor sub-system of the SoC, I naturally ended up discovering the complexity behind SoC designs, despite how small of a package they come in, and also learning what sub-systems work together on the chips in the phones we use everyday. This internship brought me one step closer to reaching my goal of being able to say I contributed to the development of something that's used in everyday products.
+                </p>
+              </div>
               <div class="tm-bg-dark content-pad">
                 <h2 class="mb-4">Motorola Solutions</h2>
                 <p class="mb-4">
-                  At Motorola Solutions, I've had the pleasure of working on Android bootloader security for a touchscreen software-defined radio under the mentorship of Donghua Yan for both an internship and mentorship. I used C to implement most of the features.
+                  At Motorola Solutions, I've had the pleasure of working on Android bootloader security for Motorola's <a href="https://www.motorolasolutions.com/en_us/products/two-way-radios/project-25-radios/portable-radios/apx-next.html" target="_blank" rel="noopener noreferrer">APX NEXT</a> software-defined radio under the mentorship of <a href="https://www.linkedin.com/in/donghuayan/" target="_blank" rel="noopener noreferrer">Donghua Yan</a> and management of Prabhakar Kesava for both an internship and part-time co-op. I used C to implement most of the features.
                 </p>
                 <p>
-                  One core feature of the bootloader which I implemented was the idea of an image preflash validation for different binary image formats as a crucial step to preventing device corruption should it fall into the wrong hands.
+                  One core feature of the bootloader which I implemented was image preflash validation for different binary image formats. This validation was a crucial step to prevent device corruption should it fall into the wrong hands.
                 </p>
                 <p>
                   Another critical feature I implemented was a dump function, which allows developers to retrieve binary image data straight from the virtual partitions on the device in case the device gets corrupted. It wasn't possible before to view the binary image data from a corrupted partition, and this feature enables the developers to manually check through the image data to find the source of corruption.
@@ -194,23 +254,11 @@ https://templatemo.com/tm-560-astro-motion
                 </p>
                 
               </div>
-              <div class = "tm-bg-dark content-pad">
-                <h2 class="mb-4">Qualcomm</h2>
-                <p class="mb-4">
-                  At Qualcomm, I've had the privelege of diving even deeper into the space of computer engineering and working on a DV project under the mentorship of Alex Valencia and management of Suren Subramanian.
-                </p>
-                <p>
-                  During my time at Qualcomm, I mainly worked on implementing a functional coverage model for the application processor sub-system of a future mobile SoC, allowing for the SoC DV team to ensure high verification quality. I added this model to an already existing special functional coverage framework spearheaded by two of my co-workers which significantly cuts down on coverage collection time across simulation, emulation, and prototyping platforms simultaneously. To complement this functional coverage model, I also wrote a Cadence vPlan to indicate to the DV engineers which bins were of more importance to cover in the verification tests. 
-                </p>
-                <p>
-                  As this was my first exploration into the realm of hardware, I learned a great deal about what industry tools and methodologies are used in the process of design verification, especially UVM. In addition, since I spent the duration of the summer working on the application processor sub-system of the SoC, I naturally ended up discovering the complexity behind SoC designs, despite how small of a package they come in, and also learning what sub-systems work together on the chips in the phones we use everyday. This internship brought me one step closer to reaching my goal of being able to say I contributed to the development of something that's used in everyday products.
-                </p>
-              </div>
               <div class="tm-bg-dark content-pad">
                 <h2 class="mb-4">Resume</h2>
-                <p>To learn more about my work experience across Motorola Solutions and Qualcomm, check out my resume below!</p>
-                <iframe src="./Wesley_Wu_Resume_SP23.pdf" width="1000px" height="1000px">
-                  <p>Unable to display PDF file. <a href="./Wesley_Wu_Resume_SP23.pdf">Download</a> instead.</p>
+                <p>To learn more about my work experience across Motorola Solutions, Qualcomm, and Arm, check out my resume below!</p>
+                <iframe src="./docs/Wesley_Wu_Resume.pdf" width="1000px" height="1000px">
+                  <p>Unable to display PDF file. <a href="./docs/Wesley_Wu_Resume.pdf">Download</a> instead.</p>
                 </iframe>
               </div>
             </div>
